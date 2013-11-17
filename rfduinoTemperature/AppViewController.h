@@ -28,16 +28,6 @@
 
 #import "RFduino.h"
 
-// For USB power, sensor settings are  0, 747
-// For 3v, settings are 1, 199
-
-#define MINIMUM_SENSOR_READING 1
-#define MAXIMUM_SENSOR_READING 199
-#define MINIMUM_SCALE_READING 0
-#define MAXIMUM_SCALE_READING 100
-#define REVERSED "YES"
-
-
 
 @interface AppViewController : UIViewController<RFduinoDelegate>
 

@@ -66,13 +66,6 @@
     
     [self readSettings];
     
-    /*
-    self.minimum_sensor_reading = MINIMUM_SENSOR_READING;
-    self.maximum_sensor_reading = MAXIMUM_SENSOR_READING;
-    self.minimum_scale_reading = MINIMUM_SCALE_READING;
-    self.maximum_scale_reading = MAXIMUM_SCALE_READING;
-    */
-
 }
 
 - (void)didReceiveMemoryWarning
