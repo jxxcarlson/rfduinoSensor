@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		AA07EB89176BF96600AB755D /* CustomCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07EB88176BF96600AB755D /* CustomCellBackground.m */; };
 		AA6DEC4B16D5622100E83C0F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA6DEC4A16D5622100E83C0F /* QuartzCore.framework */; };
-		AA981D4817825F40008342B9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA981D4717825F40008342B9 /* icon.png */; };
-		AA981D4A17825FAB008342B9 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = AA981D4917825FAB008342B9 /* icon-72.png */; };
 		AAC427D516C9DDB500149784 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC427D416C9DDB500149784 /* UIKit.framework */; };
 		AAC427D716C9DDB500149784 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC427D616C9DDB500149784 /* Foundation.framework */; };
 		AAC427D916C9DDB500149784 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC427D816C9DDB500149784 /* CoreGraphics.framework */; };
@@ -27,15 +25,15 @@
 		AAC4280916C9DF2900149784 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC4280816C9DF2900149784 /* CoreBluetooth.framework */; };
 		AAC428DB16C9FE9700149784 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC428DA16C9FE9700149784 /* AppDelegate.m */; };
 		AAE5C84416CCA54A001005E3 /* thermometer.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE5C84316CCA54A001005E3 /* thermometer.png */; };
-		AAE5C87616CDCB3B001005E3 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAE5C87516CDCB3B001005E3 /* icon@2x.png */; };
+		BD5AA4A41838754400D7585A /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5AA4A31838754400D7585A /* icon-72.png */; };
+		BD5AA4A61838755100D7585A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5AA4A51838755100D7585A /* icon.png */; };
+		BD5AA4A81838756000D7585A /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD5AA4A71838756000D7585A /* icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AA07EB87176BF96600AB755D /* CustomCellBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellBackground.h; sourceTree = "<group>"; };
 		AA07EB88176BF96600AB755D /* CustomCellBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellBackground.m; sourceTree = "<group>"; };
 		AA6DEC4A16D5622100E83C0F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		AA981D4717825F40008342B9 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		AA981D4917825FAB008342B9 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
 		AAC427D016C9DDB500149784 /* Read Sensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Read Sensor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC427D416C9DDB500149784 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AAC427D616C9DDB500149784 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,7 +60,9 @@
 		AAC428D916C9FE9700149784 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AAC428DA16C9FE9700149784 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AAE5C84316CCA54A001005E3 /* thermometer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thermometer.png; path = rfduinoTemperature/thermometer.png; sourceTree = SOURCE_ROOT; };
-		AAE5C87516CDCB3B001005E3 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		BD5AA4A31838754400D7585A /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-72.png"; path = "image/icon-72.png"; sourceTree = "<group>"; };
+		BD5AA4A51838755100D7585A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = image/icon.png; sourceTree = "<group>"; };
+		BD5AA4A71838756000D7585A /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "image/icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +84,7 @@
 		AAC427C516C9DDB500149784 = {
 			isa = PBXGroup;
 			children = (
-				AA981D4717825F40008342B9 /* icon.png */,
-				AA981D4917825FAB008342B9 /* icon-72.png */,
-				AAE5C87516CDCB3B001005E3 /* icon@2x.png */,
+				BD5AA4A2183874E700D7585A /* image */,
 				AAC427F616C9DDF900149784 /* rfduino */,
 				AAC427DA16C9DDB500149784 /* rfduinoTemperature */,
 				AAC427D316C9DDB500149784 /* Frameworks */,
@@ -160,6 +158,16 @@
 			path = ../rfduino;
 			sourceTree = "<group>";
 		};
+		BD5AA4A2183874E700D7585A /* image */ = {
+			isa = PBXGroup;
+			children = (
+				BD5AA4A71838756000D7585A /* icon@2x.png */,
+				BD5AA4A51838755100D7585A /* icon.png */,
+				BD5AA4A31838754400D7585A /* icon-72.png */,
+			);
+			name = image;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -212,14 +220,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAC427DF16C9DDB500149784 /* InfoPlist.strings in Resources */,
+				BD5AA4A41838754400D7585A /* icon-72.png in Resources */,
 				AAC427E716C9DDB500149784 /* Default.png in Resources */,
 				AAC427E916C9DDB500149784 /* Default@2x.png in Resources */,
+				BD5AA4A61838755100D7585A /* icon.png in Resources */,
 				AAC427EB16C9DDB500149784 /* Default-568h@2x.png in Resources */,
 				AAC427F516C9DDE600149784 /* AppViewController.xib in Resources */,
 				AAE5C84416CCA54A001005E3 /* thermometer.png in Resources */,
-				AAE5C87616CDCB3B001005E3 /* icon@2x.png in Resources */,
-				AA981D4817825F40008342B9 /* icon.png in Resources */,
-				AA981D4A17825FAB008342B9 /* icon-72.png in Resources */,
+				BD5AA4A81838756000D7585A /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
