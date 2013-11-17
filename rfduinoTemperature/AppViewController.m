@@ -65,6 +65,10 @@
     [self.view.layer insertSublayer:gradient atIndex:0];
     
     [self readSettings];
+    [self updateUI];
+    
+     NSLog(@"*** AFTER VIEW DID LOAD, self.scale_reversed = %d", self.scale_reversed);
+     NSLog(@"*** AFTER VIEW DID LOAD,toggle button: %@", self.toggleButton.titleLabel.text);
     
 }
 
@@ -76,7 +80,7 @@
 
 - (IBAction)disconnect:(id)sender
 {
-    NSLog(@"disconnect pressed");
+    NSLog(@"+++ disconnect pressed");
 
     [rfduino disconnect];
 }
@@ -89,15 +93,30 @@
     [[NSUserDefaults standardUserDefaults] setFloat:[self.minScale.text floatValue] forKey:@"minScaleValue"];
     [[NSUserDefaults standardUserDefaults] setFloat:[self.maxScale.text floatValue] forKey:@"maxScaleValue"];
     
+    [[NSUserDefaults standardUserDefaults] setBool:self.scale_reversed forKey:@"scaleReversed"];
+    
 }
 
-- (void) readSettings {
+
+- (NSString *)  toggleButtonString {
     
-    self.minimum_sensor_reading = [[NSUserDefaults standardUserDefaults] floatForKey:@"minSensorValue"];
-    self.maximum_sensor_reading = [[NSUserDefaults standardUserDefaults] floatForKey:@"maxSensorValue"];
+    NSLog(@"^^^ I am toggleButtonString, self.scale_reversed = %d", self.scale_reversed);
     
-    self.minimum_scale_reading = [[NSUserDefaults standardUserDefaults] floatForKey:@"minScaleValue"];
-    self.maximum_scale_reading = [[NSUserDefaults standardUserDefaults] floatForKey:@"maxScaleValue"];
+    if (self.scale_reversed) {
+        
+         NSLog(@"^^^ I am toggleButtonString, and I say REVERSED");
+        return @"Reversed";
+        
+        
+    } else {
+        
+        NSLog(@"^^^ I am toggleButtonString, and I say NORMAL");
+        return @"Normal";
+        
+    }
+}
+
+- (void) updateUI {
     
     [self.minSensor setText:[NSString stringWithFormat:@"%.2f", self.minimum_sensor_reading]];
     [self.maxSensor setText:[NSString stringWithFormat:@"%.2f", self.maximum_sensor_reading]];
@@ -105,11 +124,32 @@
     [self.minScale setText:[NSString stringWithFormat:@"%.2f", self.minimum_scale_reading]];
     [self.maxScale setText:[NSString stringWithFormat:@"%.2f", self.maximum_scale_reading]];
     
+    [self.toggleButton setTitle:[self toggleButtonString] forState:UIControlStateNormal];
+    
+}
+
+- (void) readSettings {
+    
+
+    self.minimum_sensor_reading = [[NSUserDefaults standardUserDefaults] floatForKey:@"minSensorValue"];
+    self.maximum_sensor_reading = [[NSUserDefaults standardUserDefaults] floatForKey:@"maxSensorValue"];
+    
+    self.minimum_scale_reading = [[NSUserDefaults standardUserDefaults] floatForKey:@"minScaleValue"];
+    self.maximum_scale_reading = [[NSUserDefaults standardUserDefaults] floatForKey:@"maxScaleValue"];
+    
+    self.scale_reversed = [[NSUserDefaults standardUserDefaults] boolForKey:@"scaleReversed"];
+    
+}
+
+- (void) logSettings {
+    
+    NSLog(@" ^^^ scale_reversed = %d", self.scale_reversed);
+    
 }
 
 - (void)didReceive:(NSData *)data
 {
-    NSLog(@"ReceivedRX");
+    // NSLog(@"+++ ReceivedRX");
     
     float sensorReading = dataFloat(data);
     
@@ -117,18 +157,29 @@
     float normalizedReading = (sensorReading - self.minimum_sensor_reading)/(self.maximum_sensor_reading - self.minimum_sensor_reading);
     
     // Transform
-    normalizedReading = 1 - normalizedReading;
-    
+    if (self.scale_reversed) {
+       normalizedReading = 1 - normalizedReading;
+    }
     
     float scaleReading = (self.maximum_scale_reading - self.minimum_scale_reading)*normalizedReading + self.minimum_scale_reading;
     
-    NSLog(@"Sensor, Normalized, and Scale reading: %.2f, %.2f %.2f", sensorReading, normalizedReading, scaleReading);
+    // NSLog(@"Sensor, Normalized, and Scale reading: %.2f, %.2f %.2f", sensorReading, normalizedReading, scaleReading);
     
     NSString* string1 = [NSString stringWithFormat:@"Sensor: %.2f", sensorReading];
     NSString* string2 = [NSString stringWithFormat:@"Scale: %.2f", scaleReading];
     
     [self.sensorLabel setText:string1];
     [self.scaleLabel setText:string2];
+    
+}
+
+- (IBAction)toggle:(id)sender {
+    
+    self.scale_reversed = !self.scale_reversed;
+    [self logSettings];
+    [self updateUI];
+    NSLog(@"^^^ I am toggle, and I am setting the value for 'scaleReversed' to %d", self.scale_reversed);
+    [[NSUserDefaults standardUserDefaults] setBool:self.scale_reversed forKey:@"scaleReversed"];
     
 }
 

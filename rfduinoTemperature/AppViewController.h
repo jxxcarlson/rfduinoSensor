@@ -38,12 +38,14 @@
 @property(assign) float maximum_sensor_reading;
 @property(assign) float minimum_scale_reading;
 @property(assign) float maximum_scale_reading;
+@property(assign) BOOL scale_reversed;
 
-@property(weak, nonatomic) IBOutlet UIButton *setButton;
+@property(weak, nonatomic) IBOutlet UIButton *setButton, *toggleButton;
 @property(weak, nonatomic)IBOutlet UITextField *minSensor, *maxSensor, *minScale, *maxScale;
 @property(weak, nonatomic)IBOutlet UILabel *sensorLabel, *scaleLabel;
 
 - (IBAction) updateSettings:(id)sender;
+- (IBAction)toggle:(id)sender;
 
 
 @end

@@ -12,11 +12,14 @@ scale values.  For example, suppose that the minimum and
 maximum sensor value are set to 0 and 760, and the 
 minimum and maximum scale values are set to 0 and 100,
 the a sensor reading of 380 will be displayed as a
-scale reading of 50.  
+scale reading of 50.  (See note on scale calibraton
+below).
 
-One can hard-code the app so that min and max scale values are
-reversed, e.g, 760 gives a scale reading of 0.  I will make this a
-user-definable option in the near future.
+The rightmost blue button, with text "Normal"
+or "Reversed" is used to toggle the scale direction.
+For example, in normal mode, 760 gives a scale
+reading of 100, while in reversed mode, it gives
+a scale reading of 0. 
 
 This project consists of three parts:
 
@@ -36,6 +39,17 @@ to the RFDuino.
 
 3. An iPhone app that displays the sensor data.  Communication
 with the rfduino is by Bluetooth.
+
+SCALE CALIBRATION: I used a cadmium sulfide photoresistor for this
+project with a 9.7 KOhm resistor.  The circuit was GPIO pin 1 on
+RFDuino to photoresistor to resistor to GND.  To calibrate, I first
+removed the photoresistor.  This gave me the maximum sensor reading of
+748.  Then I attached a jumper to the pins where the photoresistor
+normally goes to short this part of the circuit.  This gave me a
+minimum sensor reading of 66.  I entered these values into the two
+"Sensor" fields on the app and pressed "Set".  Next, I set the scale
+mode to "Reversed".  This was so that bright light would read high on
+the scale, low light low.
 
 NOTES: (1) at the moment, you need to put the folders containing the 
 iphone code in the folder RFDuino/iPhone\ Apps so that it will
