@@ -162,7 +162,31 @@
     char *sensorData = data(inputData);
      */
     
-    NSString *sensorReading = [[NSString alloc] initWithUTF8String:data(inputData)];
+    NSLog(@"1");
+    
+    char *theData = data(inputData);
+    
+    NSLog(@"2");
+
+     NSString *sensorReading = [NSString  stringWithUTF8String:theData];
+    
+     NSLog(@"2.1");
+    
+    char theData2 = "foobar";
+    
+    
+    NSLog(@"2.2");
+
+    
+    NSLog(@"  strlen(theData2) = %d", (int) strlen(theData2));
+    
+     NSLog(@"3");
+    
+   //  NSString *sensorReading = [[NSString alloc] initWithUTF8String:theData2];
+    
+    NSString *sensorReading2 = [NSString  stringWithUTF8String:theData2];
+    
+     NSLog(@"4");
     
     // NSString *sensorReading = [NSString stringWithUTF8String:sensorData];
    
