@@ -44,7 +44,7 @@ void loop() {
   float output = fahrenheitTemperature(sensorReading);
   RFduinoBLE.sendFloat(output);
   
-  
+ /* 
   if ( led_state == 1 ) {
      digitalWrite(led, HIGH);  
   } else {
@@ -52,6 +52,7 @@ void loop() {
   }
   
   led_state = 1 - led_state;
+  */
   
 }
 

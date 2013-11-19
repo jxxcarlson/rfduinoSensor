@@ -147,29 +147,35 @@
     
 }
 
-- (void)didReceive:(NSData *)data
+- (void)didReceive:(NSData *)inputData
 {
-    // NSLog(@"+++ ReceivedRX");
+    NSLog(@"+++ ReceivedRX");
     
-    float sensorReading = dataFloat(data);
+    /*
+    char c[5] = "Hello";
+    unsigned char *p;
+    p = (unsigned char *) malloc(sizeof(p));
+    *p = 255;
     
-    // Value betwen o and 1
-    float normalizedReading = (sensorReading - self.minimum_sensor_reading)/(self.maximum_sensor_reading - self.minimum_sensor_reading);
+    // p = (unsigned char *) malloc(sizeof(p));
+    // p = (unsigned char *) malloc(sizeof(p));
+    char *sensorData = data(inputData);
+     */
     
-    // Transform
-    if (self.scale_reversed) {
-       normalizedReading = 1 - normalizedReading;
-    }
+    NSString *sensorReading = [[NSString alloc] initWithUTF8String:data(inputData)];
     
-    float scaleReading = (self.maximum_scale_reading - self.minimum_scale_reading)*normalizedReading + self.minimum_scale_reading;
+    // NSString *sensorReading = [NSString stringWithUTF8String:sensorData];
+   
+    NSLog(@"*** sensorReading = %@", sensorReading);
+    //NSString *sensorReading = @"Test";
+    
     
     // NSLog(@"Sensor, Normalized, and Scale reading: %.2f, %.2f %.2f", sensorReading, normalizedReading, scaleReading);
     
-    NSString* string1 = [NSString stringWithFormat:@"Sensor: %.2f", sensorReading];
-    NSString* string2 = [NSString stringWithFormat:@"Scale: %.2f", scaleReading];
+
     
-    [self.sensorLabel setText:string1];
-    [self.scaleLabel setText:string2];
+    [self.sensorLabel setText:sensorReading];
+    [self.scaleLabel setText:sensorReading];
     
 }
 

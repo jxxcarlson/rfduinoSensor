@@ -24,11 +24,11 @@
                     <color key="textColor" red="0.68188124900000002" green="0.62023997310000001" blue="0.99020856619999997" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" misplaced="YES" text="Sensor Reading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70" userLabel="Label - SENSOR">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sensor Reading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70" userLabel="Label - SENSOR">
                     <rect key="frame" x="70" y="183" width="180" height="53"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="53" id="YSa-c4-9V7"/>
+                        <constraint firstAttribute="height" constant="53" id="ahq-WB-Zwb"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
                     <color key="textColor" red="1" green="0.26159376981464988" blue="0.036033848732316187" alpha="1" colorSpace="calibratedRGB"/>
@@ -39,11 +39,13 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="P0b-af-HfX" firstAttribute="top" secondItem="1" secondAttribute="top" id="5lQ-yu-bIV"/>
-                <constraint firstItem="P0b-af-HfX" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="YPc-c5-SIx"/>
-                <constraint firstItem="70" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="70" id="hSr-7b-ksU"/>
-                <constraint firstAttribute="trailing" secondItem="P0b-af-HfX" secondAttribute="trailing" id="nFU-hM-Qrp"/>
-                <constraint firstAttribute="bottom" secondItem="P0b-af-HfX" secondAttribute="bottom" id="yyS-BH-9rS"/>
+                <constraint firstItem="70" firstAttribute="top" secondItem="1" secondAttribute="top" constant="183" id="5gS-HZ-Mok"/>
+                <constraint firstItem="P0b-af-HfX" firstAttribute="top" secondItem="1" secondAttribute="top" id="HAj-No-p4U"/>
+                <constraint firstAttribute="bottom" secondItem="P0b-af-HfX" secondAttribute="bottom" id="HQz-Ft-HCT"/>
+                <constraint firstItem="70" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="70" id="OJn-vT-WyO"/>
+                <constraint firstItem="P0b-af-HfX" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="XRl-K5-WCE"/>
+                <constraint firstItem="70" firstAttribute="centerX" secondItem="P0b-af-HfX" secondAttribute="centerX" id="cQX-sX-3kq"/>
+                <constraint firstAttribute="trailing" secondItem="P0b-af-HfX" secondAttribute="trailing" id="elO-lc-uXF"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
