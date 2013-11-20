@@ -7,7 +7,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppViewController">
             <connections>
-                <outlet property="sensorLabel" destination="70" id="7Aa-lN-O56"/>
+                <outlet property="sensorLabel0" destination="70" id="hcc-wF-eVr"/>
+                <outlet property="sensorLabel1" destination="kCh-0d-8s3" id="Kf2-BE-Dy9"/>
+                <outlet property="sensorLabel2" destination="m03-tM-4LZ" id="s3P-Hk-i8V"/>
+                <outlet property="sensorLabel3" destination="tBE-nL-9V8" id="i1c-SG-XQR"/>
+                <outlet property="sensorLabel4" destination="ZjU-JY-Xpu" id="gY8-qd-ZAm"/>
+                <outlet property="sensorLabel5" destination="pbN-re-eDy" id="XW6-Pv-uCW"/>
+                <outlet property="sensorLabel6" destination="CwO-cI-XJj" id="8pW-sG-x91"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -17,21 +23,90 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0b-af-HfX">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="-5" width="320" height="578"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                     <color key="textColor" red="0.68188124900000002" green="0.62023997310000001" blue="0.99020856619999997" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sensor Reading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70" userLabel="Label - SENSOR">
-                    <rect key="frame" x="70" y="183" width="180" height="53"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sensor 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70" userLabel="Label - SENSOR">
+                    <rect key="frame" x="62" y="61" width="197" height="56"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="53" id="ahq-WB-Zwb"/>
+                        <constraint firstAttribute="height" constant="56" id="AMR-hC-wVC"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                     <color key="textColor" red="1" green="0.26159376981464988" blue="0.036033848732316187" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="4" height="4"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sensor 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCh-0d-8s3" userLabel="Label - SENSOR">
+                    <rect key="frame" x="62" y="125" width="197" height="56"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="yGc-2V-hrm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                    <color key="textColor" red="1" green="0.26159376979999999" blue="0.036033848729999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="4" height="4"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sensor 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m03-tM-4LZ" userLabel="Label - SENSOR">
+                    <rect key="frame" x="62" y="189" width="197" height="56"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="fC8-iY-jOJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                    <color key="textColor" red="1" green="0.26159376979999999" blue="0.036033848729999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="4" height="4"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sensor 3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBE-nL-9V8" userLabel="Label - SENSOR">
+                    <rect key="frame" x="62" y="253" width="197" height="56"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="V8o-yX-tYi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                    <color key="textColor" red="1" green="0.26159376979999999" blue="0.036033848729999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="4" height="4"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sensor 4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjU-JY-Xpu" userLabel="Label - SENSOR">
+                    <rect key="frame" x="62" y="312" width="197" height="56"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="OFt-iJ-dhC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                    <color key="textColor" red="1" green="0.26159376979999999" blue="0.036033848729999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="4" height="4"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sensor 5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbN-re-eDy" userLabel="Label - SENSOR">
+                    <rect key="frame" x="62" y="376" width="197" height="56"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="bsQ-Vt-el9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                    <color key="textColor" red="1" green="0.26159376979999999" blue="0.036033848729999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="4" height="4"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sensor 6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwO-cI-XJj" userLabel="Label - SENSOR">
+                    <rect key="frame" x="62" y="440" width="197" height="56"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                    <color key="textColor" red="1" green="0.26159376979999999" blue="0.036033848729999998" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <size key="shadowOffset" width="4" height="4"/>
@@ -39,13 +114,32 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="70" firstAttribute="top" secondItem="1" secondAttribute="top" constant="183" id="5gS-HZ-Mok"/>
-                <constraint firstItem="P0b-af-HfX" firstAttribute="top" secondItem="1" secondAttribute="top" id="HAj-No-p4U"/>
-                <constraint firstAttribute="bottom" secondItem="P0b-af-HfX" secondAttribute="bottom" id="HQz-Ft-HCT"/>
-                <constraint firstItem="70" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="70" id="OJn-vT-WyO"/>
-                <constraint firstItem="P0b-af-HfX" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="XRl-K5-WCE"/>
-                <constraint firstItem="70" firstAttribute="centerX" secondItem="P0b-af-HfX" secondAttribute="centerX" id="cQX-sX-3kq"/>
-                <constraint firstAttribute="trailing" secondItem="P0b-af-HfX" secondAttribute="trailing" id="elO-lc-uXF"/>
+                <constraint firstItem="m03-tM-4LZ" firstAttribute="top" secondItem="kCh-0d-8s3" secondAttribute="bottom" constant="8" symbolic="YES" id="2xS-mn-wdr"/>
+                <constraint firstItem="kCh-0d-8s3" firstAttribute="trailing" secondItem="m03-tM-4LZ" secondAttribute="trailing" id="69J-sd-nwe"/>
+                <constraint firstItem="kCh-0d-8s3" firstAttribute="top" secondItem="70" secondAttribute="bottom" constant="8" symbolic="YES" id="69q-Im-x0Q"/>
+                <constraint firstItem="70" firstAttribute="trailing" secondItem="kCh-0d-8s3" secondAttribute="trailing" id="Auq-4N-4dF"/>
+                <constraint firstItem="P0b-af-HfX" firstAttribute="top" secondItem="1" secondAttribute="top" constant="-5" id="B45-S6-6hW"/>
+                <constraint firstItem="kCh-0d-8s3" firstAttribute="leading" secondItem="m03-tM-4LZ" secondAttribute="leading" id="GpR-ap-48S"/>
+                <constraint firstAttribute="trailing" secondItem="P0b-af-HfX" secondAttribute="trailing" id="OhI-OC-K3I"/>
+                <constraint firstItem="tBE-nL-9V8" firstAttribute="top" secondItem="m03-tM-4LZ" secondAttribute="bottom" constant="8" symbolic="YES" id="Pbz-ra-btw"/>
+                <constraint firstItem="kCh-0d-8s3" firstAttribute="leading" secondItem="70" secondAttribute="leading" id="Q92-gD-FCP"/>
+                <constraint firstItem="70" firstAttribute="top" secondItem="1" secondAttribute="top" constant="61" id="RLT-ot-6Tw"/>
+                <constraint firstItem="pbN-re-eDy" firstAttribute="trailing" secondItem="CwO-cI-XJj" secondAttribute="trailing" id="T6o-q0-Rxh"/>
+                <constraint firstItem="tBE-nL-9V8" firstAttribute="leading" secondItem="ZjU-JY-Xpu" secondAttribute="leading" id="Wna-oQ-JoE"/>
+                <constraint firstItem="CwO-cI-XJj" firstAttribute="leading" secondItem="pbN-re-eDy" secondAttribute="leading" id="ZpL-WZ-WxC"/>
+                <constraint firstItem="ZjU-JY-Xpu" firstAttribute="top" secondItem="tBE-nL-9V8" secondAttribute="bottom" constant="3" id="akG-DM-kIc"/>
+                <constraint firstItem="tBE-nL-9V8" firstAttribute="trailing" secondItem="ZjU-JY-Xpu" secondAttribute="trailing" id="bgb-xg-9CD"/>
+                <constraint firstItem="P0b-af-HfX" firstAttribute="centerX" secondItem="CwO-cI-XJj" secondAttribute="centerX" id="ctB-aV-RS9"/>
+                <constraint firstItem="P0b-af-HfX" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="fLz-2c-9f5"/>
+                <constraint firstItem="pbN-re-eDy" firstAttribute="top" secondItem="ZjU-JY-Xpu" secondAttribute="bottom" constant="8" symbolic="YES" id="jWy-Qs-RFa"/>
+                <constraint firstItem="tBE-nL-9V8" firstAttribute="trailing" secondItem="m03-tM-4LZ" secondAttribute="trailing" id="lpk-5R-mUd"/>
+                <constraint firstItem="P0b-af-HfX" firstAttribute="centerY" secondItem="1" secondAttribute="centerY" id="mmf-eo-MCT"/>
+                <constraint firstItem="ZjU-JY-Xpu" firstAttribute="leading" secondItem="pbN-re-eDy" secondAttribute="leading" id="nLP-Hk-HZB"/>
+                <constraint firstItem="pbN-re-eDy" firstAttribute="trailing" secondItem="ZjU-JY-Xpu" secondAttribute="trailing" id="oNW-gY-YFR"/>
+                <constraint firstItem="m03-tM-4LZ" firstAttribute="leading" secondItem="tBE-nL-9V8" secondAttribute="leading" id="pbN-SH-P3M"/>
+                <constraint firstAttribute="bottom" secondItem="CwO-cI-XJj" secondAttribute="bottom" constant="72" id="tbS-2u-hjF"/>
+                <constraint firstItem="70" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="62" id="thX-oq-05E"/>
+                <constraint firstItem="CwO-cI-XJj" firstAttribute="top" secondItem="pbN-re-eDy" secondAttribute="bottom" constant="8" symbolic="YES" id="uck-1d-Tb6"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

@@ -30,7 +30,7 @@
 
 @implementation AppViewController
 
-@synthesize rfduino;
+@synthesize rfduino, labelArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -64,12 +64,12 @@
     gradient.colors = [NSArray arrayWithObjects:(id)start.CGColor, (id)stop.CGColor, nil];
     [self.view.layer insertSublayer:gradient atIndex:0];
     
-    [self readSettings];
-    [self updateUI];
+    self.labelArray = @[self.sensorLabel0, self.sensorLabel1, self.sensorLabel2, self.sensorLabel3, self.sensorLabel4, self.sensorLabel5, self.sensorLabel6];
     
-     NSLog(@"*** AFTER VIEW DID LOAD, self.scale_reversed = %d", self.scale_reversed);
-     NSLog(@"*** AFTER VIEW DID LOAD,toggle button: %@", self.toggleButton.titleLabel.text);
-    
+    for (UILabel *label in self.labelArray) {
+        
+        label.text = @"";
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,145 +85,103 @@
     [rfduino disconnect];
 }
 
--(void) saveSettings {
+
+- (NSString *) temperatureString: (NSString *) dataString {
     
-    [[NSUserDefaults standardUserDefaults] setFloat:[self.minSensor.text floatValue] forKey:@"minSensorValue"];
-    [[NSUserDefaults standardUserDefaults] setFloat:[self.maxSensor.text floatValue] forKey:@"maxSensorValue"];
+    float C = [dataString floatValue];
+    C = C/10;
+    float F = 1.8*C + 32;
+    return [NSString stringWithFormat:@"Temp: %1.1f C, %1.1f F", C, F];
+    //return [NSString stringWithFormat:@"Temp: %@", dataString];;
     
-    [[NSUserDefaults standardUserDefaults] setFloat:[self.minScale.text floatValue] forKey:@"minScaleValue"];
-    [[NSUserDefaults standardUserDefaults] setFloat:[self.maxScale.text floatValue] forKey:@"maxScaleValue"];
+}
+
+- (NSString *) lightString: (NSString *) dataString {
     
-    [[NSUserDefaults standardUserDefaults] setBool:self.scale_reversed forKey:@"scaleReversed"];
+    int L = [dataString integerValue];
+    L = 1023 - L;
+    L = L - 282;
+    L = 100*L/682.0;
+    
+    return [NSString stringWithFormat:@"Light: %d", L];
+    
+}
+
+- (NSString *) calibrationString: (NSString *) dataString {
+    
+    return [NSString stringWithFormat:@"Calibration: %@", dataString];
+    
+}
+
+- (NSString *) lowPoint: (NSString *) dataString {
+    
+    return [NSString stringWithFormat:@"Low: %@", dataString];
+    
+}
+
+- (NSString *) highPoint: (NSString *) dataString {
+    
+    return [NSString stringWithFormat:@"High: %@", dataString];
     
 }
 
 
-- (NSString *)  toggleButtonString {
+- (void) executeCommand: (unichar) command wthData: (NSString *) dataString {
     
-    NSLog(@"^^^ I am toggleButtonString, self.scale_reversed = %d", self.scale_reversed);
-    
-    if (self.scale_reversed) {
-        
-         NSLog(@"^^^ I am toggleButtonString, and I say REVERSED");
-        return @"Reversed";
-        
-        
-    } else {
-        
-        NSLog(@"^^^ I am toggleButtonString, and I say NORMAL");
-        return @"Normal";
-        
+
+    switch (command) {
+            
+            
+        case 'T':
+            
+            [self.sensorLabel1 setText:[self temperatureString:dataString]];
+            break;
+            
+        case 'L':
+            
+            [self.sensorLabel2 setText:[self lightString:dataString]];
+            break;
+            
+        case 'X':
+            
+            [self.sensorLabel3 setText:[self calibrationString:dataString]];
+            break;
+            
+        case '0':
+            
+            [self.sensorLabel4 setText:[self lowPoint:dataString]];
+            break;
+            
+        case 'H':
+            
+            [self.sensorLabel5 setText:[self highPoint:dataString]];
+            break;
+            
+        default:
+            break;
     }
-}
-
-- (void) updateUI {
     
-    [self.minSensor setText:[NSString stringWithFormat:@"%.2f", self.minimum_sensor_reading]];
-    [self.maxSensor setText:[NSString stringWithFormat:@"%.2f", self.maximum_sensor_reading]];
-    
-    [self.minScale setText:[NSString stringWithFormat:@"%.2f", self.minimum_scale_reading]];
-    [self.maxScale setText:[NSString stringWithFormat:@"%.2f", self.maximum_scale_reading]];
-    
-    [self.toggleButton setTitle:[self toggleButtonString] forState:UIControlStateNormal];
-    
-}
-
-- (void) readSettings {
-    
-
-    self.minimum_sensor_reading = [[NSUserDefaults standardUserDefaults] floatForKey:@"minSensorValue"];
-    self.maximum_sensor_reading = [[NSUserDefaults standardUserDefaults] floatForKey:@"maxSensorValue"];
-    
-    self.minimum_scale_reading = [[NSUserDefaults standardUserDefaults] floatForKey:@"minScaleValue"];
-    self.maximum_scale_reading = [[NSUserDefaults standardUserDefaults] floatForKey:@"maxScaleValue"];
-    
-    self.scale_reversed = [[NSUserDefaults standardUserDefaults] boolForKey:@"scaleReversed"];
-    
-}
-
-- (void) logSettings {
-    
-    NSLog(@" ^^^ scale_reversed = %d", self.scale_reversed);
     
 }
 
 - (void)didReceive:(NSData *)inputData
 {
-    NSLog(@"+++ ReceivedRX");
     
-    /*
-    char c[5] = "Hello";
-    unsigned char *p;
-    p = (unsigned char *) malloc(sizeof(p));
-    *p = 255;
+    NSString *sensorReading = [NSString stringWithUTF8String:[inputData bytes]];
+    unichar command = [sensorReading characterAtIndex:0];
+    NSString *dataString = [sensorReading substringFromIndex:1];
     
-    // p = (unsigned char *) malloc(sizeof(p));
-    // p = (unsigned char *) malloc(sizeof(p));
-    char *sensorData = data(inputData);
-     */
+    [self executeCommand:command wthData:dataString];
     
-    NSLog(@"1");
+    // NSLog(@"RDX: [%@] => %c, %@", sensorReading, command, dataString);
     
-    char *theData = data(inputData);
-    
-    NSLog(@"2");
-
-     NSString *sensorReading = [NSString  stringWithUTF8String:theData];
-    
-     NSLog(@"2.1");
-    
-    char theData2 = "foobar";
-    
-    
-    NSLog(@"2.2");
-
-    
-    NSLog(@"  strlen(theData2) = %d", (int) strlen(theData2));
-    
-     NSLog(@"3");
-    
-   //  NSString *sensorReading = [[NSString alloc] initWithUTF8String:theData2];
-    
-    NSString *sensorReading2 = [NSString  stringWithUTF8String:theData2];
-    
-     NSLog(@"4");
-    
-    // NSString *sensorReading = [NSString stringWithUTF8String:sensorData];
    
-    NSLog(@"*** sensorReading = %@", sensorReading);
-    //NSString *sensorReading = @"Test";
-    
-    
-    // NSLog(@"Sensor, Normalized, and Scale reading: %.2f, %.2f %.2f", sensorReading, normalizedReading, scaleReading);
-    
 
-    
-    [self.sensorLabel setText:sensorReading];
-    [self.scaleLabel setText:sensorReading];
-    
 }
 
-- (IBAction)toggle:(id)sender {
-    
-    self.scale_reversed = !self.scale_reversed;
-    [self logSettings];
-    [self updateUI];
-    NSLog(@"^^^ I am toggle, and I am setting the value for 'scaleReversed' to %d", self.scale_reversed);
-    [[NSUserDefaults standardUserDefaults] setBool:self.scale_reversed forKey:@"scaleReversed"];
-    
-}
 
 - (IBAction) updateSettings:(id)sender {
     
-    self.minimum_sensor_reading = [self.minSensor.text floatValue];
-    self.maximum_sensor_reading = [self.maxSensor.text floatValue];
-    
-    self.minimum_scale_reading = [self.minScale.text floatValue];
-    self.maximum_scale_reading = [self.maxScale.text floatValue];
-    
-    [self saveSettings];
-    
-    [self.view endEditing:YES];
     
 }
 
